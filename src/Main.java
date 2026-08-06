@@ -6,6 +6,10 @@ public class Main {
         int option;
 
         TicketSystem system = new TicketSystem();
+
+        Locality l = system.searchLocality(5);
+        system.registerSale(l, 6);
+
         Buyer buyer = null;
 
         do {
@@ -62,7 +66,19 @@ public class Main {
                 break;
 
                 case 4:
+                    System.out.print("Ingrese el número de la localidad (1, 5 o 10): ");
+                    int number = scanner.nextInt();
 
+                    Locality locality = system.searchLocality(number);
+
+                    if (locality != null) {
+                        System.out.println("Localidad: " + locality.getNumber());
+                        System.out.println("Precio: $" + locality.getPrice());
+                        System.out.println("Vendidos: " + locality.getSold());
+                        System.out.println("Disponibles: " + locality.availableTickets());
+                    } else {
+                        System.out.println("La localidad no existe.");
+                    }
                 break;
 
                 case 5:

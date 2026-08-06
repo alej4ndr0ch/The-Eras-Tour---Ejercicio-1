@@ -8,7 +8,7 @@ public class Locality {
 
     }
 
-    public Locality(int number, double price, int capacity, int sold){
+    public Locality(int number, double price, int capacity){
         this.number = number;
         this.price = price;
         this.capacity = capacity;

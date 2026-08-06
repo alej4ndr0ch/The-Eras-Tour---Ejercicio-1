@@ -9,8 +9,12 @@ public class TicketSystem {
     private Random random = new Random();
 
     public TicketSystem(){
-        this.localities = new ArrayList<Locality>();
+        localities = new ArrayList<>();
         box = 0;
+
+        localities.add(new Locality(1, 100, 20));
+        localities.add(new Locality(5, 500, 20));
+        localities.add(new Locality(10, 1000, 20));
     }
 
     public void registerSale(Locality locality, int quantity){
